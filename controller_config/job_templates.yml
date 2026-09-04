@@ -6,7 +6,7 @@ controller_templates:
     project: "STIG & Compliance Automation"
     execution_environment: "Compliance Evaluation EE"
     inventory: "Ansible Product Demos Inventory"
-    limit: "{{ server_fqdn }}"
+    limit: "{{ server_fqdn | default('rmf.example.com') }}"
     ask_limit_on_launch: true
 
   - name: "Compliance | Setup | Clean Compliance Server"
@@ -15,7 +15,7 @@ controller_templates:
     project: "STIG & Compliance Automation"
     execution_environment: "Compliance Evaluation EE"
     inventory: "Ansible Product Demos Inventory"
-    limit: "{{ server_fqdn }}"
+    limit: "{{ server_fqdn | default('rmf.example.com') }}"
     ask_limit_on_launch: true
 
   - name: "Compliance | Remediation | Remediate Linux Servers (light)"
