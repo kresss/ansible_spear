@@ -8,6 +8,8 @@ controller_templates:
     inventory: "Ansible Product Demos Inventory"
     limit: "{{ server_fqdn | default('rmf.example.com') }}"
     ask_limit_on_launch: true
+    credentials:
+      - APD Machine Credential
 
   - name: "Compliance | Setup | Clean Compliance Server"
     description: "Removes STIG Manager, OpenRMF, and Keycloak from target server"
@@ -17,7 +19,9 @@ controller_templates:
     inventory: "Ansible Product Demos Inventory"
     limit: "{{ server_fqdn | default('rmf.example.com') }}"
     ask_limit_on_launch: true
-
+    credentials:
+      - APD Machine Credential
+  
   - name: "Compliance | Remediation | Remediate Linux Servers (light)"
     description: "Runs a subset of STIG remediations against Linux hosts"
     playbook: "playbooks/remediate_light_linux.yml"
@@ -25,6 +29,8 @@ controller_templates:
     execution_environment: "Compliance Evaluation EE"
     inventory: "Ansible Product Demos Inventory"
     ask_limit_on_launch: true
+    credentials:
+      - APD Machine Credential
 
   - name: "Compliance | Remediation | Remediate Linux Servers (full)"
     description: "Runs all STIG remediations against Linux hosts"
@@ -33,6 +39,8 @@ controller_templates:
     execution_environment: "Compliance Evaluation EE"
     inventory: "Ansible Product Demos Inventory"
     ask_limit_on_launch: true
+    credentials:
+      - APD Machine Credential
 
   - name: "Compliance | Remediation | Remediate Windows Servers (full)"
     description: "Runs all STIG remediations against Windows hosts"
@@ -41,6 +49,8 @@ controller_templates:
     execution_environment: "Compliance Evaluation EE"
     inventory: "Ansible Product Demos Inventory"
     ask_limit_on_launch: true
+    credentials:
+      - APD Machine Credential
 
   - name: "Compliance | Scanning | Scan servers with Evaluate STIG"
     description: "Scans hosts and generates ckl/cklb/xml files - NEEDS proprietary binary!"
@@ -49,6 +59,8 @@ controller_templates:
     execution_environment: "Compliance Evaluation EE"
     inventory: "Ansible Product Demos Inventory"
     ask_limit_on_launch: true
+    credentials:
+      - APD Machine Credential
 
   - name: "Compliance | Scanning | Scan servers with DISA SCC"
     description: "Scans hosts and generates ckl/cklb/xml files with DISA scc"
@@ -57,5 +69,6 @@ controller_templates:
     execution_environment: "Compliance Evaluation EE"
     inventory: "Ansible Product Demos Inventory"
     ask_limit_on_launch: true
-
+    credentials:
+      - APD Machine Credential
 ...
