@@ -6,9 +6,9 @@
 
 - name: Set dynamic service URL endpoints
   ansible.builtin.set_fact:
-    auth_server_fqdn: "http://{{ app_server_ip }}:{{ keycloak_host_port }}"
-    stigman_server_url: "http://{{ app_server_ip }}:{{ stigman_host_port }}"
-    openrmf_server: "http://{{ app_server_ip }}:{{ openrmf_host_port }}"
+    auth_server_fqdn: "https://{{ app_server_ip }}:{{ keycloak_host_port }}"
+    stigman_server_url: "https://{{ app_server_ip }}:{{ stigman_host_port }}"
+    openrmf_server: "https://{{ app_server_ip }}:{{ openrmf_host_port }}"
   when: not (use_fqdn | bool)
 
 # ------------------------------------------------------------------
